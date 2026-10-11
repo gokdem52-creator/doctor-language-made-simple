@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Omni-Bridge: the Babel-Fish for Medical Jargon</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6fbfa;--card:#fff;--ink:#12232b;--mute:#58707a;--brand:#0f9d8a;--brand2:#1d6fd6;--line:#dbe8e6;--mark:#d9f4ee}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c171b;--card:#13242a;--ink:#e7f2f1;--mute:#97b0b4;--brand:#2fc7b2;--brand2:#6aa6f5;--line:#23393f;--mark:#17463f}}
+:root[data-theme="dark"]{--bg:#0c171b;--card:#13242a;--ink:#e7f2f1;--mute:#97b0b4;--brand:#2fc7b2;--brand2:#6aa6f5;--line:#23393f;--mark:#17463f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:800;font-size:20px;display:flex;align-items:center;gap:8px}
+.logo i{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:inline-block}
+nav a{color:var(--mute);text-decoration:none;margin-left:20px;font-size:14px}
+.hero{text-align:center;padding:48px 0 36px}
+.pill{display:inline-block;padding:4px 12px;border:1px solid var(--line);border-radius:99px;font-size:13px;color:var(--mute);background:var(--card)}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.1;margin:18px 0 14px;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:620px;margin:0 auto 24px;color:var(--mute);font-size:18px}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border:0;padding:12px 22px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);padding:8px 14px;font-size:13px}
+section{padding:36px 0}
+h2{font-size:28px;margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--mute);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card .n{width:34px;height:34px;border-radius:50%;background:var(--mark);color:var(--brand);display:grid;place-items:center;font-weight:700;margin-bottom:10px}
+.card h3{margin:0 0 6px;font-size:17px}.card p{margin:0;color:var(--mute);font-size:15px}
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:720px){.demo{grid-template-columns:1fr}nav a{display:none}}
+label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+textarea{width:100%;min-height:150px;margin-top:8px;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;resize:vertical}
+.out{white-space:pre-wrap;margin-top:8px;min-height:150px;padding:12px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}
+mark{background:var(--mark);color:var(--ink);padding:1px 5px;border-radius:5px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.pv{max-width:100%;max-height:120px;border-radius:8px;margin-top:10px;display:none}
+select,input.l{min-width:170px;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.terms{margin:12px 0 0;padding:0;list-style:none;font-size:14px;color:var(--mute)}
+.terms li{padding:6px 0;border-top:1px solid var(--line)}.terms b{color:var(--ink)}
+.note{font-size:13px;color:var(--mute);margin-top:12px}
+footer{padding:28px 0 40px;color:var(--mute);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><div class="logo"><i></i>Omni-Bridge</div><div><a href="#how">How it works</a><a href="#demo">Try it</a><a href="#why">Why</a></div></nav>
+
+<header class="hero">
+<span class="pill">Dual-layer translation + simplification</span>
+<h1>The Babel-Fish for <span>medical jargon</span></h1>
+<p>Doctors speak in clinical terms. Patients need to understand them, in their own language. Omni-Bridge translates and simplifies, so every patient actually knows what was said.</p>
+<a class="btn" href="#demo">Try the demo</a>
+</header>
+
+<section id="how">
+<h2>Two layers, one clear message</h2>
+<p class="sub">A basic translator swaps words between languages. Omni-Bridge fixes the harder problem first.</p>
+<div class="grid">
+<div class="card"><div class="n">1</div><h3>Listen</h3><p>Captures what the doctor says, technical terminology and all.</p></div>
+<div class="card"><div class="n">2</div><h3>Simplify</h3><p>Rewrites jargon into plain, everyday language at an easy reading level.</p></div>
+<div class="card"><div class="n">3</div><h3>Translate</h3><p>Delivers the simplified message in the patient's preferred language.</p></div>
+</div>
+</section>
+
+<section id="demo">
+<h2>Try the simplifier</h2>
+<p class="sub">Paste what a doctor said, or take a photo of a chart, lab report or discharge instructions. Choose any language.</p>
+<div class="card">
+<div class="demo">
+<div>
+<label for="inp">Doctor says</label>
+<textarea id="inp">The patient presents with hypertension and tachycardia. We'll order a biopsy to confirm the lesion is benign. Take the analgesic PRN.</textarea>
+<div class="row"><button class="btn" id="go">Simplify</button><button class="btn ghost" id="ex">Another example</button>
+<label class="btn ghost" style="cursor:pointer;text-transform:none;letter-spacing:0;font-weight:600">📷 Photo of chart<input type="file" id="pic" accept="image/*" capture="environment" hidden></label></div>
+<img class="pv" id="pv" alt="Chart preview">
+</div>
+<div>
+<label>Patient hears</label>
+<div class="out" id="out"></div>
+<div class="row"><label for="lang" style="margin:0">Translate to</label>
+<input class="l" id="lang" list="langs" value="English" onfocus="this.select()" aria-label="Language">
+<datalist id="langs"><option>English</option><option>Spanish</option><option>Mandarin Chinese</option><option>Cantonese</option><option>Hindi</option><option>Gujarati</option><option>Punjabi</option><option>Bengali</option><option>Urdu</option><option>Arabic</option><option>French</option><option>Haitian Creole</option><option>Portuguese</option><option>Russian</option><option>Ukrainian</option><option>Polish</option><option>Korean</option><option>Japanese</option><option>Vietnamese</option><option>Tagalog</option><option>Thai</option><option>Swahili</option><option>Amharic</option><option>Yoruba</option><option>Somali</option><option>Turkish</option><option>Persian (Farsi)</option><option>Hebrew</option><option>German</option><option>Italian</option><option>Greek</option><option>Nepali</option><option>Tamil</option><option>Telugu</option><option>American Sign Language (description)</option></datalist></div>
+<ul class="terms" id="terms"></ul>
+</div>
+</div>
+<p class="note" id="ai">Basic glossary mode (English and Spanish terms only).</p>
+<p class="note">Type any language into the box, even ones not in the list. Always confirm medical details with a clinician.</p>
+</div>
+</section>
+
+<section id="why">
+<h2>Why it matters</h2>
+<div class="grid">
+<div class="card"><h3>Understanding, not just words</h3><p>Literal translation of jargon is still jargon. Simplifying first keeps meaning intact.</p></div>
+<div class="card"><h3>Safer care</h3><p>Patients who understand diagnoses and instructions follow treatment plans more reliably.</p></div>
+<div class="card"><h3>Built for everyone</h3><p>Helps non-native speakers and anyone overwhelmed by clinical language.</p></div>
+</div>
+</section>
+
+<footer>Omni-Bridge concept for HackRU. Not medical advice.</footer>
+</div>
+
+<script>
+var G={
+hypertension:["high blood pressure","presión arterial alta"],
+tachycardia:["a fast heartbeat","latidos del corazón rápidos"],
+biopsy:["a small tissue sample test","una prueba con una pequeña muestra de tejido"],
+lesion:["abnormal spot","zona anormal"],
+benign:["not cancer","no canceroso"],
+malignant:["cancerous","canceroso"],
+analgesic:["pain reliever","analgésico (medicina para el dolor)"],
+prn:["only when you need it","solo cuando lo necesite"],
+bid:["twice a day","dos veces al día"],
+edema:["swelling","hinchazón"],
+dyspnea:["trouble breathing","dificultad para respirar"],
+hypoglycemia:["low blood sugar","azúcar baja en la sangre"],
+idiopathic:["with no known cause","sin causa conocida"],
+prognosis:["what to expect going forward","lo que se espera a futuro"],
+contraindicated:["not safe for you","no es seguro para usted"],
+npo:["do not eat or drink","no coma ni beba"]
+};
+var EX=["The prognosis is good. The edema is idiopathic, so we'll monitor it. Take the medication BID.",
+"The patient presents with dyspnea and hypoglycemia. Aspirin is contraindicated.",
+"The patient presents with hypertension and tachycardia. We'll order a biopsy to confirm the lesion is benign. Take the analgesic PRN."];
+var ei=0;
+function esc(s){return s.replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+function run(){
+var t=document.getElementById("inp").value,es=/^(es|span)/i.test(document.getElementById("lang").value.trim()),found=[];
+var html=esc(t).replace(/\b[A-Za-z]+\b/g,function(w){var k=w.toLowerCase();
+if(G[k]){if(found.indexOf(k)<0)found.push(k);return"<mark>"+G[k][0]+"</mark>"}return w});
+document.getElementById("out").innerHTML=html||"Type something above.";
+document.getElementById("terms").innerHTML=found.map(function(k){
+return"<li><b>"+k+"</b> → "+(es?G[k][1]:G[k][0])+"</li>"}).join("");
+}
+document.getElementById("go").onclick=function(){smart()};
+document.getElementById("lang").onchange=function(){smart()};
+document.getElementById("ex").onclick=function(){document.getElementById("inp").value=EX[ei=(ei+1)%EX.length];run()};
+run();
+var SM=null,IMG=null;
+if(window.claude&&claude.use)claude.use("sample").then(function(s){SM=s;if(s)document.getElementById("ai").textContent="AI mode on: any language, and photos of charts are supported."}).catch(function(){});
+function shrink(f){return new Promise(function(res){var im=new Image();im.onload=function(){var r=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*r);c.height=Math.round(im.height*r);c.getContext("2d").drawImage(im,0,0,c.width,c.height);c.toBlob(res,"image/jpeg",.85)};im.src=URL.createObjectURL(f)})}
+document.getElementById("pic").onchange=async function(e){var f=e.target.files[0];if(!f)return;IMG=await shrink(f);var pv=document.getElementById("pv");pv.src=URL.createObjectURL(IMG);pv.style.display="block";smart()};
+async function smart(){
+var out=document.getElementById("out"),terms=document.getElementById("terms");
+if(!SM){if(IMG){out.textContent="Photo translation is only available when this page is opened in Claude.";terms.innerHTML="";return}run();return}
+var lang=document.getElementById("lang").value.trim()||"English",t=document.getElementById("inp").value.trim();
+out.textContent="Working...";terms.innerHTML="";
+var p="You are Omni-Bridge, a tool that helps patients understand what clinicians say or write. "+(IMG?"The attached image is a photo of a medical chart, report or instructions. Read all the text in it. ":"")+(t?"Clinician's words: "+t+"\n\n":"\n")+"Do this: 1) Rewrite everything in plain, friendly language at about a 6th-grade reading level, keeping every number, dose, date and unit exact. 2) Write the whole result in "+lang+". 3) Finish with a short Key terms list (term = simple meaning) in "+lang+". 4) End with one sentence in "+lang+" saying to confirm with their care team. Do not diagnose or add advice. Output plain text only, no markdown.";
+try{var o={cache:false,onText:function(x){out.textContent=x.text}};
+if(IMG){var l=await SM.limits();if(!l.images){out.textContent="Photo reading isn't available in this view.";return}o.images=[IMG]}
+var r=await SM(p,o);out.textContent=r.text}
+catch(e){if(IMG){out.textContent="Couldn't read the photo ("+((e&&e.code)||"error")+"). Try again.";return}run()}
+}
+</script>
+</body>
+</html>
